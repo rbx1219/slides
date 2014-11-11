@@ -1,0 +1,55 @@
+\section{Motivation}
+
+\begin{frame}{Motivation}
+
+  \begin{itemize}
+    \item Exploration and Exploitation
+      \begin{itemize}
+        \item Exploration: the ability to have an overview to the search
+          space.
+        \item Exploitation: the ability to generate high resolution
+          solutions.
+        \item CMA-ES preforms outstandingly on exploitation.
+      \end{itemize}
+      \vspace*{14pt}
+    \item Easily trapped into local optima due to the ability of
+      exploitation.
+      \begin{itemize}
+        \item Lack of diversity
+        \item Typical evolutionary algorithms adopt a larger initial
+          population size.
+        \item CMA-ES benefits nothing from a larger initial population
+          size.
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Hypothesis}
+
+  \begin{itemize}
+    \item Increasing diversity by maintaining multiple groups.
+      \begin{itemize}
+        \item kind of discretization.
+        \item How to define the number of groups?
+        \item What is the criteria for individuals to form a group?
+      \end{itemize}
+      \vspace*{14pt}
+    \item There is implicit information hidden between groups.
+      \begin{itemize}
+        \item How to extract the information?
+        \item How to benefit from the information and obtain
+          better solutions?
+          \begin{itemize}
+            \item Inspired by discretization, we aim to find a more
+              promising region.
+          \end{itemize}
+      \end{itemize}
+      \vspace*{14pt}
+    \item 2-layer CMA-ES is introduced
+      \begin{itemize}
+        \item Inner layer for exploitation
+        \item Outer layer for exploration
+      \end{itemize}
+  \end{itemize}
+
+\end{frame}
