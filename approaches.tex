@@ -3,29 +3,75 @@
   \begin{itemize}
     \item Optimizing black-box problems
       \begin{itemize}
-        \item No deterministic way to evolve global optimum.
-        \item Applying random search for approximation.
+        \item No deterministic way to evolve global optimum
+        \item Applying meta heuristic for approximation
       \end{itemize}
       \vspace*{14pt}
     \item Stochastic algorithms
       \begin{itemize}
-        \item Ant Colony Optimization, Bat Algorithm, etc.
-        \item Iteratively generating better solutions.
+        \item Iteratively generating better solutions
       \end{itemize}
       \vspace*{14pt}
     \item Two major approaches
       \begin{itemize}
-        \item Estimation of distribution algorithm (EDA).
-        \item Evolution strategy (ES).
+        \item Estimation of distribution algorithm (EDA)
+        \item Evolution strategy (ES)
       \end{itemize}
   \end{itemize}
 \end{frame}
 
 \subsection{Real-coded Extended Compact Genetic Algorithm}
 
+
+\begin{frame}{Discretization} 
+  \begin{itemize} 
+    \item Continuous domain $\rightarrow$ Discrete domain 
+    \item Finding good solutions $\rightarrow$ Finding promising
+      regions
+    \item 2 traditional discretization methods
+      \begin{itemize}
+        \item Fixed Height Histogram (FHH)
+        \item Fixed Width Histogram (FWH)
+      \end{itemize}
+      \vspace*{2pt}
+  \end{itemize}
+  \begin{minipage}{.45\textwidth}
+    \begin{figure}
+      \centering
+      \includegraphics[width =0.5\linewidth]{FHH.eps}
+      \caption{Illustration of FHH}
+    \end{figure}
+  \end{minipage}
+  \begin{minipage}{.45\textwidth}
+    \begin{figure}
+      \centering
+      \includegraphics[width =0.5\linewidth]{FWH.eps}
+      \caption{Illustration of FWH}
+    \end{figure}
+  \end{minipage}
+
+\end{frame}
+
+\begin{frame}{Split on Demand}
+  \begin{itemize}
+    \item Solutions in each bin should not exceed $\gamma N$.
+      \begin{itemize}
+        \item $N$ is the population size.
+        \item $\gamma$ defines the rate of one region.
+      \end{itemize}
+    \item $\gamma$ decays with a factor $\epsilon$.
+  \end{itemize}
+  \hspace{-9cm}
+  \vspace*{-0.5cm}
+      \begin{figure}[h]
+      \includegraphics[scale = 0.2]{SoD.eps}
+        \caption{Illustration of SoD}
+      \end{figure}
+\end{frame}
+
 \begin{frame}{EDA}
   \begin{itemize}
-    \item Also known as Probabilistic Model Building GA (PMBGA).\pause
+    \item Sometimes also known as Probabilistic Model Building GA (PMBGA).\pause
       \begin{itemize}
         \item Building model explicitly.
         \item Linkage between decision variables are provided.\pause
@@ -63,51 +109,6 @@
       \end{itemize}
   \end{itemize}
 \end{frame}
-
-\begin{frame}{Discretization} 
-  \begin{itemize} 
-    \item Continuous domain $\rightarrow$ Discrete domain 
-    \item Finding good solutions $\rightarrow$ Finding promising
-      regions
-    \item 2 traditional discretization methods
-      \begin{itemize}
-        \item Fixed Height Histogram (FHH)
-        \item Fixed Width Histogram (FWH)
-      \end{itemize}
-  \end{itemize}
-  \begin{minipage}{.45\textwidth}
-    \begin{figure}
-      \centering
-      \includegraphics[width =0.6\linewidth]{FHH.eps}
-      \caption{illustration of FHH}
-    \end{figure}
-  \end{minipage}
-  \begin{minipage}{.45\textwidth}
-    \begin{figure}
-      \centering
-      \includegraphics[width =0.7\linewidth]{FWH.eps}
-      \caption{illustration of FWH}
-    \end{figure}
-  \end{minipage}
-
-\end{frame}
-
-\begin{frame}{Split on Demand}
-  \begin{itemize}
-    \item Solutions in each bin should not exceed $\gamma N$.
-      \begin{itemize}
-        \item $N$ is the population size.
-        \item $\gamma$ defines the rate of one region.
-      \end{itemize}
-    \item $\gamma$ decays with a factor $\epsilon$.
-  \end{itemize}
-  \begin{figure}
-    \centering
-    \includegraphics[scale = 0.3]{SoD.eps}
-    \caption{illustration of SoD}
-  \end{figure}
-\end{frame}
-
 \begin{frame}{Real-coded ECGA with SoD}
   \pause
   \begin{enumerate}
@@ -139,12 +140,12 @@
       \vspace*{14pt}
     \item New search points are generated based on current population.
       \vspace*{14pt}
-    \item $(\mu,\lambda)$-ES and $(\mu,\mu+\lambda)$-ES.
+    \item $(\mu,\lambda)$-ES and $(\mu+\lambda)$-ES.
       \vspace*{14pt}
     \item $x_i^{t+1} = m^t + \sigma N_i(0,C)$.
       \begin{itemize}
-        \item $x_i$: $i$-th generated solution at generation $t+1$.
-        \item $m$: weighted mean of population at generation $t$.
+        \item $x_i^{t+1}$: $i$-th generated solution at generation $t+1$.
+        \item $m^t$: weighted mean of population at generation $t$.
         \item $\sigma$: step size.
         \item $C$: Estimated distribution.
       \end{itemize}
@@ -169,11 +170,11 @@
             \item Representing the dependency among decision variables.
           \end{itemize}
       \end{itemize}
-          \vspace*{14pt}
-        \item CMA-ES features in the adoption of historical information.
-          \begin{itemize}
-            \item $\sigma$ and $C$ are adjusted accordingly.
-          \end{itemize}
+      \vspace*{14pt}
+    \item CMA-ES features in the adoption of historical information.
+      \begin{itemize}
+        \item $\sigma$ and $C$ are adjusted accordingly.
+      \end{itemize}
   \end{itemize}
 \end{frame}
 

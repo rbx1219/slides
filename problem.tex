@@ -26,16 +26,23 @@
 
 \begin{frame}{Black-box Optimization}
 
-  \begin{itemize}
-    \item Without interior information.
-    \item Unavailable to optimize using mathematical methods. 
-    \item The only information is the interaction between input and
-      output.  
-  \end{itemize}
-  \begin{figure}[b]
+  \begin{figure}[h]
     \includegraphics[scale=0.5]{BlackBox.eps}
     \caption{Black-box function}  
   \end{figure}
+  \begin{itemize}
+    \item The only information is the interaction between input and
+    output.  
+  \item The key point is investigating the trade-off between
+    \alert{exploration}
+    and \alert{exploitation}.
+    \begin{itemize}
+      \item Exploration is the capability of \alert{having an overview for the search
+        space}.
+  \item Exploitation is the capability of \alert{generating high resolution
+    candidates}. 
+    \end{itemize}
+  \end{itemize}
 
 \end{frame}
 
@@ -45,15 +52,22 @@
       \begin{itemize}[<+->]
         \item Non-convex
           \begin{itemize}
-            \item Multi-modal problems
+            \item Local optima are less important for global optimum.
           \end{itemize}
-        \item <.(-2)-> Ruggedness
+        \item Ruggedness
           \begin{itemize}  
             \item Perturbated by noise. 
             \item Non-smooth.
           \end{itemize}
-        \item <.(-3)-> Dimensionality and non-separable
-        \item <.(-3)-> Ill-conditioned
+        \item Dimensionality
+          \begin{itemize}
+            \item Search space grows exponentially
+          \end{itemize}
+        \item Non-separable
+          \begin{itemize}
+            \item Dependencies between decision variables
+          \end{itemize}
+        \item Ill-conditioned
           \begin{itemize}
             \item Unable to extract gradient information
           \end{itemize}
