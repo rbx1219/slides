@@ -63,69 +63,67 @@
   \end{itemize}
   \hspace{-9cm}
   \vspace*{-0.5cm}
-      \begin{figure}[h]
-      \includegraphics[scale = 0.2]{SoD.eps}
-        \caption{Illustration of SoD}
-      \end{figure}
+  \begin{figure}[h]
+    \includegraphics[scale = 0.2]{SoD.eps}
+    \caption{Illustration of SoD}
+  \end{figure}
 \end{frame}
 
 \begin{frame}{EDA}
-  \begin{itemize}
-    \item Sometimes also known as Probabilistic Model Building GA (PMBGA).\pause
+  \begin{columns}
+    \begin{column}{.65\textwidth}
       \begin{itemize}
-        \item Building model explicitly.
-        \item Linkage between decision variables are provided.\pause
+        \item Sometimes known as Probabilistic Model Building GA (PMBGA).
+          \begin{itemize}
+            \item Building model explicitly.
+            \item Linkage between decision variables are provided.
+          \end{itemize}
+          \vspace*{14pt}
+        \item  Extended Compact Genetic Algorithm (ECGA).
+          \begin{itemize}
+            \item Model is built according to population distribution.
+            \item Applying greedy search to refine model iteratively.
+          \end{itemize}
+         % \begin{figure}
+         %   \centering
+         %   \only<4>{\includegraphics[height = 0.5\textheight]{EDA.eps}}
+         % \end{figure}
       \end{itemize}
-      \vspace*{14pt}
-    \item Mechanism difference with traditional GA.
-      \begin{itemize}
-        \item Operators `crossover' and `mutation' are replaced with
-          `modeling' and `sampling'.        \pause
-          \begin{figure}
-            \centering
-            \only<4>{\includegraphics[height = 0.5\textheight]{EDA.eps}}
-          \end{figure}
-      \end{itemize}
-  \end{itemize}
+    \end{column}
+    \begin{column}{.35\textwidth}
+      \begin{figure}[htp]
+        \centering
+        \includegraphics[width = 0.8\textwidth]{EDA.eps}
+        \caption{EDA}
+      \end{figure}
+    \end{column}
+  \end{columns}
 \end{frame}
 
-\begin{frame}{Extended Compact Genetic Algorithm (ECGA)}
-  \begin{itemize}
-    \item Each EDA is different from the others in \alert{model
-      building}.
-      \vspace*{14pt}
-    \item ECGA was proposed by Harik (1999).
-      \vspace*{14pt}
-    \item Good probabilistic model inspires good linkage learing
-      \begin{itemize}
-        \item Model is built according to population distribution.
-        \item Applying greedy search to refine model iteratively.
-      \end{itemize}
-      \vspace*{14pt}
-    \item ECGA focuses on bitstring, discrete problems.
-      \begin{itemize}
-        \item $\chi$-ECGA.
-        \item An interface for real-valued function is demanded.
-      \end{itemize}
-  \end{itemize}
-\end{frame}
 \begin{frame}{Real-coded ECGA with SoD}
-  \pause
-  \begin{enumerate}
-    \item Preparing discretization\pause
-      \vspace*{14pt}
-    \item Integrating discretized results into ECGA.\pause
-      \vspace*{14pt}
-    \item ECGA builds model accordingly, output the promising
-      regions.\pause
-      \vspace*{14pt}
-    \item Sampling accordingly.\pause
-      \vspace*{14pt}
-    \item For every $L$ generations, a local optimizer is adopted to
-      obtain high resolution solutions\pause
-      \vspace*{14pt}
-    \item If model does not converge, goto 1.
-  \end{enumerate}
+  \vspace*{14pt}
+  \begin{figure}
+    \flushleft
+    
+    \includegraphics[width=.6\textwidth]{rECGA.eps}
+    \caption{Integrating SoD into ECGA}
+  \end{figure}
+  %\pause
+  %\begin{enumerate}
+  %  \item Preparing discretization\pause
+  %    \vspace*{14pt}
+  %  \item Integrating discretized results into ECGA.\pause
+  %    \vspace*{14pt}
+  %  \item ECGA builds model accordingly, output the promising
+  %    regions.\pause
+  %    \vspace*{14pt}
+  %  \item Sampling accordingly.\pause
+  %    \vspace*{14pt}
+  %  \item For every $L$ generations, a local optimizer is adopted to
+  %    obtain high resolution solutions\pause
+  %    \vspace*{14pt}
+  %  \item If model does not converge, goto 1.
+  %\end{enumerate}
 \end{frame}
 
 \subsection{Covariance Matrix Adaptation Evolution Strategy}
@@ -178,29 +176,32 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Illustration of $\sigma$ and $C$}
-  \begin{columns}
-    \begin{column}{.33\textwidth}
-      \begin{figure}
-        \centering
-        \includegraphics[width=.9\textwidth]{ES_0.eps}
-        \caption{$t$ = 0}
-      \end{figure}
-    \end{column}
-    \begin{column}{.33\textwidth}
-      \begin{figure}
-        \centering
-        \includegraphics[width=.9\textwidth]{ES_10.eps}
-        \caption{$t$ = 10}
-      \end{figure}
-    \end{column}
-    \begin{column}{.33\textwidth}
-      \begin{figure}
-        \centering
-        \includegraphics[width = .9\textwidth]{ES_20.eps}
-        \caption{$t$ = 20}
-      \end{figure}
-    \end{column}
-  \end{columns}
+\begin{frame}{Illustration of CMA-ES}
+  \begin{figure}
+    \includegraphics[scale = 0.4]{CMAES.eps}
+  \end{figure}
+%  \begin{columns}
+%    \begin{column}{.33\textwidth}
+%      \begin{figure}
+%        \centering
+%        \includegraphics[width=.9\textwidth]{ES_0.eps}
+%        \caption{$t$ = 0}
+%      \end{figure}
+%    \end{column}
+%    \begin{column}{.33\textwidth}
+%      \begin{figure}
+%        \centering
+%        \includegraphics[width=.9\textwidth]{ES_10.eps}
+%        \caption{$t$ = 10}
+%      \end{figure}
+%    \end{column}
+%    \begin{column}{.33\textwidth}
+%      \begin{figure}
+%        \centering
+%        \includegraphics[width = .9\textwidth]{ES_20.eps}
+%        \caption{$t$ = 20}
+%      \end{figure}
+%    \end{column}
+%  \end{columns}
 \end{frame}
 

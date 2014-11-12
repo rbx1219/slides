@@ -2,6 +2,6 @@
 \beamer@sectionintoc {1}{Real-valued Function Optimization}{3}{0}{1}
 \beamer@sectionintoc {2}{Related Approaches}{17}{0}{2}
 \beamer@subsectionintoc {2}{1}{Real-coded Extended Compact Genetic Algorithm}{19}{0}{2}
-\beamer@subsectionintoc {2}{2}{Covariance Matrix Adaptation Evolution Strategy}{33}{0}{2}
-\beamer@sectionintoc {3}{Summary}{36}{0}{3}
-\beamer@sectionintoc {4}{Conclusion}{37}{0}{4}
+\beamer@subsectionintoc {2}{2}{Covariance Matrix Adaptation Evolution Strategy}{23}{0}{2}
+\beamer@sectionintoc {3}{Summary}{26}{0}{3}
+\beamer@sectionintoc {4}{Conclusion}{27}{0}{4}
