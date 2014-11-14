@@ -1,4 +1,4 @@
-
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
 
 \section{Real-valued Function Optimization}
 
@@ -6,19 +6,19 @@
   \begin{itemize}
     \item{Real-valued function}
       \begin{itemize}
-        \item $f \colon \mathcal{S} \subset \mathbb{R}^n \to
+        \item $f \colon \mathcal{S} \subseteqq \mathbb{R}^n \to
           \mathbb{R},x \mapsto f(x)$
         \item $\mathcal{S} \colon $ search space
         \item Elements of $\mathcal{S} \colon $ candidates or solutions
       \end{itemize}
     \item{Optimization}
       \begin{itemize}
-        \item $\mathop{\arg\min}\limits_{x} f(x)$, where $x$ are within given bounds.
+        \item $\argmin\limits_{x} f(x)$, where $x$ are within given bounds.
         \item Maximizing $f$ is equivalent to minimizing $-f$.
       \end{itemize}
     \item Example
       \begin{itemize}
-        \item $\mathop{\arg\min}\limits_x 2x^3-3x^2-36x-14$.
+        \item $\argmin\limits_x 2x^3-3x^2-36x-14$.
         \item Design of aircraft wings.
       \end{itemize}
   \end{itemize}
@@ -37,10 +37,10 @@
     \alert{exploration}
     and \alert{exploitation}.
     \begin{itemize}
-      \item Exploration is the capability of \alert{having an overview for the search
-        space}.
-  \item Exploitation is the capability of \alert{generating high resolution
-    candidates}. 
+      \item Exploration $\rightarrow$ having an overview for the search
+        space.
+  \item Exploitation $\rightarrow$ generating high resolution
+    candidates. 
     \end{itemize}
   \end{itemize}
 

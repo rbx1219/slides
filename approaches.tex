@@ -1,21 +1,22 @@
 \section{Related Approaches}
 \begin{frame}{Related Approaches}
   \begin{itemize}
-    \item Optimizing black-box problems
+    \item Optimization
       \begin{itemize}
-        \item No deterministic way to evolve global optimum
-        \item Applying meta heuristic for approximation
+        \item Deterministic
+        \item Stochastic
       \end{itemize}
       \vspace*{14pt}
-    \item Stochastic algorithms
+    \item Properties
       \begin{itemize}
-        \item Iteratively generating better solutions
+        \item Stability
+        \item Robustness
       \end{itemize}
       \vspace*{14pt}
-    \item Two major approaches
+    \item Utilizing global information
       \begin{itemize}
-        \item Estimation of distribution algorithm (EDA)
-        \item Evolution strategy (ES)
+        \item Estimation of Distribution Algorithm (EDA)
+        \item Model building
       \end{itemize}
   \end{itemize}
 \end{frame}
@@ -30,8 +31,8 @@
       regions
     \item 2 traditional discretization methods
       \begin{itemize}
-        \item Fixed Height Histogram (FHH)
-        \item Fixed Width Histogram (FWH)
+        \item Fixed-Height Histogram (FHH)
+        \item Fixed-Width Histogram (FWH)
       \end{itemize}
       \vspace*{2pt}
   \end{itemize}
@@ -106,7 +107,7 @@
     \flushleft
     
     \includegraphics[width=.6\textwidth]{rECGA.eps}
-    \caption{Integrating SoD into ECGA}
+    \caption{rECGA}
   \end{figure}
   %\pause
   %\begin{enumerate}
@@ -152,7 +153,7 @@
 
 \begin{frame}{Covariance Matrix Adaptation Evolution Strategy (CMA-ES)}
   \begin{itemize}
-    \item A famous derivation of ES.
+    \item A famous branch of ES.
       \vspace*{14pt}
     \item Importance of $\sigma$ and $C$.
       \begin{itemize}
