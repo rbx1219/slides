@@ -45,47 +45,67 @@
   \end{itemize}
 
 \end{frame}
-
-\begin{frame}{Difficulties}
+\begin{frame}{Problem Difficulty}
   \begin{columns}
-    \begin{column}{0.6\textwidth}
-      \begin{itemize}[<+->]
+    \begin{column}{0.7\textwidth}
+      \begin{itemize}
         \item Non-convex
-          \begin{itemize}
-            \item Local optima are less important for global optimum.
-          \end{itemize}
         \item Ruggedness
-          \begin{itemize}  
-            \item Perturbated by noise. 
-            \item Non-smooth.
-          \end{itemize}
         \item Dimensionality
-          \begin{itemize}
-            \item Search space grows exponentially
-          \end{itemize}
         \item Non-separable
-          \begin{itemize}
-            \item Dependencies between decision variables
-          \end{itemize}
         \item Ill-conditioned
-          \begin{itemize}
-            \item Unable to extract gradient information
-          \end{itemize}
       \end{itemize}
     \end{column}
-    \begin{column}{0.4\textwidth}
-      \onslide<2->{
-        \begin{figure}[l]
-          \includegraphics[width = 0.6\columnwidth]{Non-Convex.eps}
-          \caption{Non-convex function}
-        \end{figure}
-      }
-      \onslide<4->{
-        \begin{figure}[H]
-          \includegraphics[width = 0.6\columnwidth]{Rugged.eps}
-          \caption{$sin(x)$ with noise}
-        \end{figure}
-      }
+    \begin{column}{0.25\textwidth}
+      \begin{minipage}[b]{1\textwidth}
+      \includegraphics[height=0.18\textheight]{Non-Convex}
+    \end{minipage}
+    \begin{minipage}[b]{1\textwidth}  
+    \includegraphics[height=0.18\textheight]{Rugged}
+  \end{minipage}
     \end{column}
   \end{columns}
 \end{frame}
+%\begin{frame}{Difficulties}
+%  \begin{columns}
+%    \begin{column}{0.6\textwidth}
+%      \begin{itemize}[<+->]
+%        \item Non-convex
+%          \begin{itemize}
+%            \item Local optima are less important for global optimum.
+%          \end{itemize}
+%        \item Ruggedness
+%          \begin{itemize}  
+%            \item Perturbated by noise. 
+%            \item Non-smooth.
+%          \end{itemize}
+%        \item Dimensionality
+%          \begin{itemize}
+%            \item Search space grows exponentially
+%          \end{itemize}
+%        \item Non-separable
+%          \begin{itemize}
+%            \item Dependencies between decision variables
+%          \end{itemize}
+%        \item Ill-conditioned
+%          \begin{itemize}
+%            \item Unable to extract gradient information
+%          \end{itemize}
+%      \end{itemize}
+%    \end{column}
+%    \begin{column}{0.4\textwidth}
+%      \onslide<2->{
+%        \begin{figure}[l]
+%          \includegraphics[width = 0.6\columnwidth]{Non-Convex.eps}
+%          \caption{Non-convex function}
+%        \end{figure}
+%      }
+%      \onslide<4->{
+%        \begin{figure}[H]
+%          \includegraphics[width = 0.6\columnwidth]{Rugged.eps}
+%          \caption{$sin(x)$ with noise}
+%        \end{figure}
+%      }
+%    \end{column}
+%  \end{columns}
+%\end{frame}
