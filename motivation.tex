@@ -1,6 +1,7 @@
 \section{Motivation}
-
-\begin{frame}{rECGA}
+\begin{frame}
+  \frametitle{rECGA}
+  \vspace*{-28pt}
   \begin{itemize}
     \item Discretization 
       \begin{itemize}
@@ -9,35 +10,36 @@
         \item Is there any distortion?
       \end{itemize}
   \end{itemize}
-  \vspace*{24pt}
+  \vspace*{-23pt}
   \begin{figure}[htpb]
-    \includegraphics[width = 0.4\textwidth]{Discretization.eps}
+    \flushright
+    \includegraphics[bb= 92 397 755 220, clip, width=0.5\textwidth]{Discretization.eps}
   \end{figure}
-\end{frame}
-
-\begin{frame}{rECGA}
+  \vspace*{28pt}
   \begin{itemize}
     \item Unreasonable sampling
       \begin{itemize}
-        \item The cliff between each bin is sometimes steep.
+        \item cliff between each bin is sometimes steep.
       \end{itemize}
-  \end{itemize}
+      \vspace{-14pt}
   \begin{figure}[hpb]
-    \centering
-    \vfill\includegraphics[width = 0.4\textwidth]{Sampling.eps}
+    \includegraphics[bb = 67 546 774 21,clip, width = 0.3\textwidth]{Sampling.eps}
   \end{figure}
+\end{itemize}
+
 \end{frame}
+
 
 \begin{frame}{rECGA}
   \begin{itemize}
     \item rECGA tackles the difficulty of
-      \alert{non-separable} and \alert{Ill-conditioned}.
+      and \alert{Ill-conditioned}.
       \vspace*{14pt}
     \item rECGA limits the searching region in early stage to deal with
       \alert{dimensionality}.
       \vspace*{14pt}
-    \item rECGA struggles in exploration and encounters the previous
-      introduced hazard.
+    \item rECGA struggles in exploration and encounters the previously
+      introduced difficulties.
       \vspace*{14pt}
     \item Why not make real-valued problem solved by methods encoded in
       continuous domain?
