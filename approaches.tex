@@ -39,15 +39,15 @@
   \begin{minipage}{.45\textwidth}
     \begin{figure}
       \centering
-      \includegraphics[width =0.5\linewidth]{FHH.eps}
-      \caption{Illustration of FHH}
+      \includegraphics[bb = 144 82 686 502, clip, width =0.9\textwidth]{FHH.eps}
+      \caption{FHH}
     \end{figure}
   \end{minipage}
   \begin{minipage}{.45\textwidth}
     \begin{figure}
       \centering
-      \includegraphics[width =0.5\linewidth]{FWH.eps}
-      \caption{Illustration of FWH}
+      \includegraphics[bb = 144 82 686 502, clip, width =0.9\textwidth]{FWH.eps}
+      \caption{FWH}
     \end{figure}
   \end{minipage}
 
@@ -62,69 +62,100 @@
       \end{itemize}
     \item $\gamma$ decays with a factor $\epsilon$.
   \end{itemize}
-  \hspace{-9cm}
-  \vspace*{-0.5cm}
   \begin{figure}[h]
-    \includegraphics[scale = 0.2]{SoD.eps}
-    \caption{Illustration of SoD}
+    \includegraphics[bb = 100 86 635 502, clip, scale = 0.3]{SoD.eps}
+    \caption{SoD}
   \end{figure}
 \end{frame}
 
-\begin{frame}{EDA}
-  \begin{columns}
-    \begin{column}{.65\textwidth}
-      \begin{itemize}
-        \item Sometimes known as Probabilistic Model Building GA (PMBGA).
-          \begin{itemize}
-            \item Building model explicitly.
-            \item Linkage between decision variables are provided.
-          \end{itemize}
-          \vspace*{14pt}
-        \item  Extended Compact Genetic Algorithm (ECGA).
-          \begin{itemize}
-            \item Model is built according to population distribution.
-            \item Applying greedy search to refine model iteratively.
-          \end{itemize}
-         % \begin{figure}
-         %   \centering
-         %   \only<4>{\includegraphics[height = 0.5\textheight]{EDA.eps}}
-         % \end{figure}
-      \end{itemize}
-    \end{column}
-    \begin{column}{.35\textwidth}
-      \begin{figure}[htp]
-        \centering
-        \includegraphics[width = 0.8\textwidth]{EDA.eps}
-        \caption{EDA}
-      \end{figure}
-    \end{column}
-  \end{columns}
+%\begin{frame}{EDA}
+%  \begin{columns}
+%    \begin{column}{.5\textwidth}
+%      \begin{itemize}
+%        \item Sometimes known as Probabilistic Model Building GA (PMBGA).
+%          \begin{itemize}
+%            \item Building model explicitly.
+%            \item Linkage between decision variables are provided.
+%          \end{itemize}
+%          \vspace*{14pt}
+%          \includegraphics[bb= 46 359 625 282, clip, width = 0.8\textwidth]{linkage}
+%      %  \item  Extended Compact Genetic Algorithm (ECGA).
+%      %    \begin{itemize}
+%      %      \item Model is built according to population distribution.
+%      %      \item Applying greedy search to refine model iteratively.
+%      %    \end{itemize}
+%      \end{itemize}
+%    \end{column}
+%    \begin{column}{.5\textwidth}
+%      \begin{figure}[htp]
+%        \centering
+%        \includegraphics[width = 0.8\textwidth]{EDA.eps}
+%      \end{figure}
+%    \end{column}
+%  \end{columns}
+%\end{frame}
+
+\begin{frame}{Extended Compact Genetic Algorithm}
+  \begin{figure}
+    \centering
+  \includegraphics[bb = 1 125 900 450, clip, height = 0.35\textheight]{EDA2.eps}
+\end{figure}
+  \begin{figure}
+    \centering
+  \includegraphics[bb = 32 150 552 450, clip, height = 0.15\textheight]{modelbuilding.eps}
+\end{figure}
+  \begin{itemize}
+    \item $Pr(x_1,x_2,x_3,x_4) = Pr(x_1)Pr(x_2,x_4)Pr(x_3)$
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Extended Compact Genetic Algorithm}
+  \begin{figure}[t]  
+    \includegraphics[bb = 50 73 777 554, clip, width=.8\textwidth]{ECGA.eps}
+  \end{figure}
 \end{frame}
 
 \begin{frame}{Real-coded ECGA with SoD}
-  \vspace*{14pt}
-  \begin{figure}
-    \flushleft
-    
-    \includegraphics[width=.6\textwidth]{rECGA.eps}
-    \caption{rECGA}
+  \begin{figure}[t]  
+    \includegraphics[bb = 50 73 777 554, clip, width=.8\textwidth]{rECGA.eps}
   \end{figure}
-  %\pause
-  %\begin{enumerate}
-  %  \item Preparing discretization\pause
-  %    \vspace*{14pt}
-  %  \item Integrating discretized results into ECGA.\pause
-  %    \vspace*{14pt}
-  %  \item ECGA builds model accordingly, output the promising
-  %    regions.\pause
-  %    \vspace*{14pt}
-  %  \item Sampling accordingly.\pause
-  %    \vspace*{14pt}
-  %  \item For every $L$ generations, a local optimizer is adopted to
-  %    obtain high resolution solutions\pause
-  %    \vspace*{14pt}
-  %  \item If model does not converge, goto 1.
-  %\end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{rECGA}
+  \begin{itemize}
+    \item Discretization 
+      \begin{itemize}
+        \item Continuous domain $\rightarrow$ Discrete domain $\rightarrow$
+          Continuous domain
+        \item Any distortion?
+      \end{itemize}
+  \end{itemize}
+  \begin{figure}[htpb]
+    \includegraphics[bb= 92 220 755 397, clip, width=0.5\textwidth]{Discretization.eps}
+  \end{figure}
+  \begin{itemize}
+    \item Sampling
+      \begin{itemize}
+        \item Cliff between each bin is sometimes steep.
+      \end{itemize}
+      \begin{figure}[hpb]
+        \includegraphics[bb = 67 21 774 546,clip, width = 0.3\textwidth]{Sampling.eps}
+      \end{figure}
+  \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{rECGA}
+  \begin{itemize}
+    \item rECGA tackles the difficulty of \alert{dimensionality}.
+      \vspace*{14pt}
+    \item Struggles in exploration, sampling.
+      \vspace*{14pt}
+    \item Why not solve continuous problem right in continuous domain?
+  \end{itemize}
 \end{frame}
 
 \subsection{Covariance Matrix Adaptation Evolution Strategy}
@@ -139,8 +170,6 @@
       \vspace*{14pt}
     \item New search points are generated based on current population.
       \vspace*{14pt}
-    \item $(\mu,\lambda)$-ES and $(\mu+\lambda)$-ES.
-      \vspace*{14pt}
     \item $x_i^{t+1} = m^t + \sigma N_i(0,C)$.
       \begin{itemize}
         \item $x_i^{t+1}$: $i$-th generated solution at generation $t+1$.
@@ -153,7 +182,7 @@
 
 \begin{frame}{Covariance Matrix Adaptation Evolution Strategy (CMA-ES)}
   \begin{itemize}
-    \item A famous branch of ES.
+    \item A famous branch of ES
       \vspace*{14pt}
     \item Importance of $\sigma$ and $C$.
       \begin{itemize}
@@ -177,11 +206,28 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Illustration of CMA-ES}
+\begin{frame}{CMA-ES}
   \begin{figure}[t]
-    \includegraphics[width = 0.5\textwidth]{CMAES.eps}
+    \includegraphics[bb= 79 64 664 552, clip, width = 0.75\textwidth]{CMAES.eps}
   \end{figure}
 \end{frame}
+
+\begin{frame}{CMA-ES}
+  \begin{itemize}
+    \item An outstanding local optimizer
+    \item Tackles \alert{non-separable} by maintaining a
+      covariance matrix
+    \item Usually encounters premature convergence
+  \end{itemize}
+  \begin{figure}[htpb]
+    \centering
+    \vfill\includegraphics[scale = 0.3]{LocalOptima.eps}
+  \end{figure}
+\end{frame}
+%        \item Outer layer for exploration
+%      \end{itemize}
+%  \end{itemize}
+
 %  \begin{columns}
 %    \begin{column}{.33\textwidth}
 %      \begin{figure}

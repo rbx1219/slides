@@ -6,7 +6,7 @@
   \begin{itemize}
     \item{Real-valued function}
       \begin{itemize}
-        \item $f \colon \mathcal{S} \subseteqq \mathbb{R}^n \to
+        \item $f \colon \mathcal{S} \subseteq \mathbb{R}^n \mapsto
           \mathbb{R},x \mapsto f(x)$
         \item $\mathcal{S} \colon $ search space
         \item Elements of $\mathcal{S} \colon $ candidates or solutions
@@ -39,30 +39,54 @@
     \begin{itemize}
       \item Exploration $\rightarrow$ having an overview for the search
         space.
-  \item Exploitation $\rightarrow$ generating high resolution
-    candidates. 
+  \item Exploitation $\rightarrow$ generating high-resolution
+    solutions. 
     \end{itemize}
   \end{itemize}
 
 \end{frame}
 \begin{frame}{Problem Difficulty}
   \begin{columns}
-    \begin{column}{0.7\textwidth}
+    \begin{column}{0.55\textwidth}
+      \vspace*{-14pt}
       \begin{itemize}
         \item Non-convex
+          \begin{itemize}
+            \item Local optima are less important
+          \end{itemize}
         \item Ruggedness
+          \begin{itemize}
+            \item Huge \# of local optima
+          \end{itemize}
         \item Dimensionality
+          \begin{itemize}
+            \item Search space grows exponentially
+          \end{itemize}
         \item Non-separable
+          \begin{itemize}
+            \item $f : x \mapsto f(x)$ separable
+            \item $f : x \mapsto f(Rx)$ non-separable
+          \end{itemize}
         \item Ill-conditioned
+          \begin{itemize}
+            \item Zig-zagging
+          \end{itemize}
       \end{itemize}
     \end{column}
-    \begin{column}{0.25\textwidth}
+    \begin{column}{0.55\textwidth}
       \begin{minipage}[b]{1\textwidth}
-      \includegraphics[height=0.18\textheight]{Non-Convex}
+      \includegraphics[width = 0.3\textwidth]{Original}
+      \includegraphics[trim = 1 0 0 0, clip,  width = 0.3\textwidth]{Non-Convex}
+      \includegraphics[width = 0.3\textwidth]{Rugged}
     \end{minipage}
     \begin{minipage}[b]{1\textwidth}  
-    \includegraphics[height=0.18\textheight]{Rugged}
-  \end{minipage}
+      \includegraphics[width = 0.3\textwidth]{2d}
+      \includegraphics[width = 0.3\textwidth]{2dcontour}
+      \includegraphics[width = 0.3\textwidth]{rotatedcontour}
+    \end{minipage}
+    \begin{minipage}[b]{1\textwidth}
+      \includegraphics[width = 1\textwidth]{illconditioned}
+    \end{minipage}
     \end{column}
   \end{columns}
 \end{frame}

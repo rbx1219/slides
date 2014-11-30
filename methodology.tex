@@ -1,73 +1,57 @@
 \section{Methodology}
 
-
-\begin{frame}{Making Division}
-  \begin{itemize}
-    \item In this work we adopt k-means for dividing.
-        \begin{itemize}
-          \item An effective vector-quantization approach
-          \item Categorizing initial population into k groups
-        \end{itemize}
-    \end{itemize}
-    \begin{columns}
-      \begin{column}{0.2\textwidth}
-        \begin{figure}
-          \includegraphics[width=.8\textwidth]{K_Means_Example_Step_1.eps}
-        \end{figure}
-        
-      \end{column}
-      \begin{column}{0.2\textwidth}
-        \begin{figure}
-          \includegraphics[width=.8\textwidth]{K_Means_Example_Step_2.eps}
-        \end{figure}
-        
-      \end{column}
-      \begin{column}{0.2\textwidth}
-        \begin{figure}
-          \includegraphics[width=.8\textwidth]{K_Means_Example_Step_3.eps}
-        \end{figure}
-        
-      \end{column}
-      \begin{column}{0.2\textwidth}
-        \begin{figure}
-          \includegraphics[width=.8\textwidth]{K_Means_Example_Step_4.eps}
-        \end{figure}
-        
-      \end{column}
-    \end{columns}
-
+\begin{frame}{Flow of MAB Based CMA-ES}
+  \includegraphics[bb= 77 150 642 546, clip, width = .9\textwidth]{FlowMAB.eps}
 \end{frame}
+%\begin{frame}{Clustering}
+%  \begin{itemize}
+%    \item In this work we adopt $k$-means for dividing.
+%        \begin{itemize}
+%          \item An effective vector-quantization approach
+%          \item Categorizing initial population into $k$ groups
+%        \end{itemize}
+%    \end{itemize}
+%    \begin{columns}
+%      \begin{column}{0.2\textwidth}
+%        \begin{figure}
+%          \includegraphics[width=.8\textwidth]{K_Means_Example_Step_1.eps}
+%        \end{figure}
+%        
+%      \end{column}
+%      \begin{column}{0.2\textwidth}
+%        \begin{figure}
+%          \includegraphics[width=.8\textwidth]{K_Means_Example_Step_2.eps}
+%        \end{figure}
+%        
+%      \end{column}
+%      \begin{column}{0.2\textwidth}
+%        \begin{figure}
+%          \includegraphics[width=.8\textwidth]{K_Means_Example_Step_3.eps}
+%        \end{figure}
+%        
+%      \end{column}
+%      \begin{column}{0.2\textwidth}
+%        \begin{figure}
+%          \includegraphics[width=.8\textwidth]{K_Means_Example_Step_4.eps}
+%        \end{figure}
+%        
+%      \end{column}
+%    \end{columns}
+%
+%\end{frame}
 
-
-\begin{frame}{Multi-armed Bandit Problem}
+\begin{frame}{Multi-armed Bandit problem}
   \begin{itemize}
     \item Investigate the trade-off between exploration and exploitation
-      \vspace*{10pt}
-    \item Assume there are $k$ independent slot machines
-      \vspace*{10pt}
-    \item Each machine generates reward according to its own unknown probability
-      distribution.
-      \vspace*{10pt}
-    \item We can only observe the playing sequence and the correlated
-      reward.
-      \vspace*{10pt}
-    \item The goal is to maximize reward in limited play times.
-      \vspace*{10pt}
-  \end{itemize}
-  \begin{figure}
-    \flushright
-    \includegraphics[width = 0.3\textwidth]{MAB-2.eps}
-  \end{figure}
-\end{frame}
+      to maximize reward in limit times
+      \vspace*{14pt}
+    \item Upper Confidence Bound (UCB)
+      \vspace*{14pt}
+    \item Each time UCB1-tuned selects machine $j$ that maximizes
+\[\bar{x_j} + \sqrt{\frac{\ln{n}}{n_j}
+          \min(\frac{1}{4},V_j(n_j))}\], where $V_j(t) =\sigma_j^2 +
+          \sqrt{\frac{2\ln n}{n_j}}$.
 
-\begin{frame}{Upper Confidence Bound }
-  \begin{itemize}
-    \item A family of solutions to MAB problems
-      \vspace*{14pt}
-    \item UCB1 -- the first Upper Confidence Bound (UCB) algorithm
-      \vspace*{14pt}
-    \item Play machine $j$ which maximizes
-      \[\bar{x_j} + \sqrt{\frac{2\ln n}{n_j}}\]
       \begin{itemize}
         \item $\bar{x_j}$: the average reward of machine $j$.
         \item $n_j$: the number of times machine $j$ has been played.
@@ -76,42 +60,76 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{UCB1-tuned}
-  \begin{itemize}
-    \item UCB1 takes no variance into consider.
-      \begin{itemize}
-        \item UCB1-tuned is the version which adds variance as a factor.
-        \item UCB1-tuned is not proven working well but outperforms UCB1 in
-          practice.
-        \item In UCB1-tuned, the machine $j$ to be played is with the
-          highest \[\bar{x_j} + \sqrt{\frac{\ln{n}}{n_j}
-          \min(\frac{1}{4},V_j(n_j))}\], where $V_j(t) =\sigma_j^2 +
-          \sqrt{\frac{2\ln n}{n_j}}$.
-      \end{itemize}
-      \vspace*{14pt}
-    \item UCB1-tuned is adopted in our work.
-  \end{itemize}
+%\begin{frame}{Multi-armed Bandit Problem}
+%  \begin{itemize}
+%    \item Investigate the trade-off between exploration and exploitation
+%      \vspace*{10pt}
+%    \item Assume there are $k$ independent slot machines
+%      \vspace*{10pt}
+%    \item Each machine generates reward according to its own unknown probability
+%      distribution.
+%      \vspace*{10pt}
+%    \item We can only observe the playing sequence and the correlated
+%      reward.
+%      \vspace*{10pt}
+%    \item The goal is to maximize reward in limited play times.
+%      \vspace*{10pt}
+%  \end{itemize}
+%  \begin{figure}
+%    \flushright
+%    \includegraphics[width = 0.3\textwidth]{MAB-2.eps}
+%  \end{figure}
+%\end{frame}
+%
+%\begin{frame}{Upper Confidence Bound }
+%  \begin{itemize}
+%    \item A family of solutions to MAB problems
+%      \vspace*{14pt}
+%    \item UCB1 -- the first Upper Confidence Bound (UCB) algorithm
+%      \vspace*{14pt}
+%    \item Play machine $j$ which maximizes
+%      \[\bar{x_j} + \sqrt{\frac{2\ln n}{n_j}}\]
+%      \begin{itemize}
+%        \item $\bar{x_j}$: the average reward of machine $j$.
+%        \item $n_j$: the number of times machine $j$ has been played.
+%        \item $n$: the played times of overall system.
+%      \end{itemize} 
+%  \end{itemize}
+%\end{frame}
+%
+%\begin{frame}{UCB1-tuned}
+%  \begin{itemize}
+%    \item UCB1 takes no variance into consider.
+%      \begin{itemize}
+%        \item UCB1-tuned is the version which adds variance as a factor.
+%        \item UCB1-tuned is not proven working well but outperforms UCB1 in
+%          practice.
+%        \item In UCB1-tuned, the machine $j$ to be played is with the
+%          highest \[\bar{x_j} + \sqrt{\frac{\ln{n}}{n_j}
+%          \min(\frac{1}{4},V_j(n_j))}\], where $V_j(t) =\sigma_j^2 +
+%          \sqrt{\frac{2\ln n}{n_j}}$.
+%      \end{itemize}
+%      \vspace*{14pt}
+%    \item UCB1-tuned is adopted in our work.
+%  \end{itemize}
+%
+%\end{frame}
 
-\end{frame}
-
-\begin{frame}{The Replacement Strategy}
-  \begin{itemize}
-    \item By generating a new point and sampling around the new point,
-      we claim to form a better group, and the worst one should be
-      replaced.
-      \vspace*{14pt}
-    \item There are 2 judgement to distinguish if there is any group to
-      delete.
+\begin{frame}{Replacement Strategy} 
+\begin{itemize} 
+  \item By generating a new arm and sampling from the distribution of
+          that arm, we can replace the worst arm by the newly generated
+          one.  
+          \vspace*{14pt}
+    \item There are 2 judgement to distinguish if there is any arm to
+      be replaced.
       \begin{enumerate}
-        \item If a group samples no better solution anyway.
-        \item If no group converges, check among groups if there is
-          group has not been played for $t$ rounds where $t$ is a
-          number larger than the number of the solutions the group
-          contains.
+        \item If an arm samples no better solution in a period of time.
+        \item If an arm has not been pulled for a long while.
       \end{enumerate}
   \end{itemize}
 \end{frame}
-\begin{frame}{Illustration of Proposed System}
+\begin{frame}{Implementation of Proposed System}
   Here we give a simple description about our system.
   \vspace*{8pt}
   \only<1>{

@@ -3,7 +3,7 @@
 \usetheme{CambridgeUS}
 %\usetheme{Warsaw}
 \usefonttheme[onlymath]{serif}
-\title[MAB-based CMA-ES]{Multi-armed Bandit Based Covariance Matrix Adaptation
+\title[MAB-based CMA-ES]{Multi-armed Bandit Based 2-layer Covariance Matrix Adaptation
 Evolution Strategy}
 \author[Chuan-Che Yen]{Chuan-Che Yen \\Advisor: Dr. Tian-Li Yu}
 \institute{TEILab}
@@ -48,33 +48,36 @@ Evolution Strategy}
 
 \input{problem}
 \input{approaches}
-%\input{motivation}
-%\input{methodology}
-%\input{experiment}
+\input{motivation}
+\input{methodology}
+\input{experiment}
 
-\section{Summary}
-\begin{frame}{Summary}
+%\section{Summary}
+%\begin{frame}{Summary}
+%
+%  \begin{itemize}
+%    \item Traditional solutions for black-box optimization suffer from
+%      insufficient exploration.
+%    \item We assume there is implicit tendency among local optima and
+%      apply CMA-ES to trace the tendency.
+%    \item By mapping our problem into a multi-armed bandit problem, we
+%      claim to propose an algorithm with stronger exploration.
+%  \end{itemize}
+%\end{frame}
 
-  \begin{itemize}
-    \item Traditional solutions for black-box optimization suffer from
-      insufficient exploration.
-    \item We assume there is implicit tendency among local optima and
-      apply CMA-ES to trace the tendency.
-    \item By mapping our problem into a multi-armed bandit problem, we
-      claim to propose an algorithm with stronger exploration.
-  \end{itemize}
-\end{frame}
-
-\section{Conclusion}
+\section{Summary \& Conclusion}
 \begin{frame}{Conclusion}
   \begin{itemize}
-    \item This work introduces an algorithm which performs comparable to
-      rECGA with SoD.
-    \item Mapping to MAB problem is helpful to develop promising
-      regions. 
-    \item Tendency among local optima is claimed to be useful according to
-      the experiment results.
+    \item This work proposes an assumption that the location of global
+      optimum can be retrieved from locations of local optima.
+      \vspace*{14pt}
+    \item Based on our assumption, we designed an algorithm by
+      combining  CMA-ES, MAB, clustering.
+      \vspace*{14pt}
+    \item On the 25 benchmark problems of 2005 CEC, our algorithm is shown to
+      outperform CMA-ES and rECGA+SoD.
   \end{itemize}
 \end{frame}
+
 
 \end{document}

@@ -1,63 +1,5 @@
 \section{Motivation}
-\begin{frame}
-  \frametitle{rECGA}
-  \vspace*{-28pt}
-  \begin{itemize}
-    \item Discretization 
-      \begin{itemize}
-        \item Continuous domain $\rightarrow$ Discrete domain $\rightarrow$
-          Continuous domain
-        \item Is there any distortion?
-      \end{itemize}
-  \end{itemize}
-  \vspace*{-23pt}
-  \begin{figure}[htpb]
-    \flushright
-    \includegraphics[bb= 92 397 755 220, clip, width=0.5\textwidth]{Discretization.eps}
-  \end{figure}
-  \vspace*{28pt}
-  \begin{itemize}
-    \item Unreasonable sampling
-      \begin{itemize}
-        \item cliff between each bin is sometimes steep.
-      \end{itemize}
-      \vspace{-14pt}
-  \begin{figure}[hpb]
-    \includegraphics[bb = 67 546 774 21,clip, width = 0.3\textwidth]{Sampling.eps}
-  \end{figure}
-\end{itemize}
 
-\end{frame}
-
-
-\begin{frame}{rECGA}
-  \begin{itemize}
-    \item rECGA tackles the difficulty of
-      and \alert{Ill-conditioned}.
-      \vspace*{14pt}
-    \item rECGA limits the searching region in early stage to deal with
-      \alert{dimensionality}.
-      \vspace*{14pt}
-    \item rECGA struggles in exploration and encounters the previously
-      introduced difficulties.
-      \vspace*{14pt}
-    \item Why not make real-valued problem solved by methods encoded in
-      continuous domain?
-
-  \end{itemize}
-\end{frame}
-\begin{frame}{CMA-ES}
-  \begin{itemize}
-    \item An outstanding local optimizer
-    \item Tackles \alert{non-separable} by maintaining a
-      covariance matrix
-    \item Usually encounters premature convergence
-  \end{itemize}
-  \begin{figure}[htpb]
-    \centering
-    \vfill\includegraphics[scale = 0.3]{LocalOptima.eps}
-  \end{figure}
-\end{frame}
 \begin{frame}{Hypothesis}
   \begin{itemize}
     \item Both CMA-ES and rECGA suffer from \alert{ruggedness} for
@@ -69,41 +11,48 @@
   \vspace*{10pt}
   \begin{figure}[hp]
     \centering
-    \includegraphics[scale=0.3]{Problem.eps}
+    \includegraphics[scale=0.25]{Problem.eps}
   \end{figure}
 \end{frame}
 
 \begin{frame}{Hypothesis}
-  \begin{itemize}
-    \item Assume problems are with such structure
+ % \begin{itemize}
+ %   \item Assume problems are with such structure
       \vspace*{10pt}
-    \item We are aiming to fetch more promising region by evolving the
-      tendency
-  \end{itemize}
-  \vspace*{10pt}
+ %   \item We are aiming to fetch more promising region by evolving the
+ %     tendency
+ % \end{itemize}
+  \setbeamercolor{block title}{use=structure,fg=white,bg=red}
+  \setbeamercolor{block body}{use=structure,fg=black,bg=white!20!white}
+
+  \begin{block}{Assumption}
+   The information of the region where the global optimum resides is
+   somehow hidden in the locations of local optima and can be retrieved
+   by proper methods.
+  \end{block}
   \begin{figure}[hp]
     \centering
-    \includegraphics[scale=0.3]{tendency.eps}
+    \includegraphics[bb= 40 43 658 565, clip, scale=0.25]{tendency.eps}
   \end{figure}
 \end{frame}
 \begin{frame}{Hypothesis}
   \begin{itemize}
-    \item A reasonable discretization 
+    \item An enhanced exploration  
       \vspace*{10pt}
-    \item Clustering based on space locality  
+    \item Clustering based on spatial locality  
   \vspace*{10pt}
 \item Performing a 2nd layer CMA-ES for evolving the tendency
   \end{itemize}
   \vspace*{10pt}
   \begin{figure}[htpb]
     \centering
-    \includegraphics[scale=0.35]{hypothesis_discretization.eps}
+    \includegraphics[scale=0.25]{hypothesis_discretization.eps}
   \end{figure}
 \end{frame}
 
 \begin{frame}{Expected benefit}
   \begin{itemize}
-    \item A soft, adaptive discretization
+    \item A soft, adaptive exploration
       \begin{itemize}
         \item Iteratively exploring better regions.
         \item Generated regions are also source for better regions.
